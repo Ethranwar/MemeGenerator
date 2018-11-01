@@ -1,0 +1,16 @@
+<html>
+<body>
+<h1>The Gradual Word Change Generator</h1>
+<p>Enter two words/sentences that start with the same letter</p>
+<form action={% url 'memegenerator:home' %} method='post'>
+    {% csrf_token %}
+    {{form}}
+    <br>
+    <input type='submit' value='Generate Meme'>
+</form>
+{% for line in big_list %}
+    {{line}}
+    <br>
+{% endfor %}
+</body>
+</html>
